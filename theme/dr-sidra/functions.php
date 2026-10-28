@@ -19,8 +19,14 @@ function dr_sidra_setup() {
 add_action('after_setup_theme', 'dr_sidra_setup');
 
 function dr_sidra_assets() {
-    wp_enqueue_style('dr-sidra', get_stylesheet_uri(), array(), '1.0.0');
-    wp_enqueue_script('dr-sidra', get_template_directory_uri() . '/assets/theme.js', array(), '1.0.0', true);
+    wp_enqueue_style(
+        'dr-sidra-fonts',
+        'https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap',
+        array(),
+        null
+    );
+    wp_enqueue_style('dr-sidra', get_stylesheet_uri(), array('dr-sidra-fonts'), '1.5.0');
+    wp_enqueue_script('dr-sidra', get_template_directory_uri() . '/assets/theme.js', array(), '1.3.0', true);
 }
 add_action('wp_enqueue_scripts', 'dr_sidra_assets');
 

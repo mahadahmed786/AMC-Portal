@@ -16,7 +16,10 @@
   <div class="header-inner">
     <a class="brand" href="<?php echo esc_url(home_url('/')); ?>">
       <span class="brand-mark" aria-hidden="true">S</span>
-      <span>Dr. Sidra</span>
+      <span class="brand-copy">
+        <strong>Dr. Sidra</strong>
+        <span>AMC MCQ</span>
+      </span>
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav id="site-nav" class="site-nav" aria-label="Primary">

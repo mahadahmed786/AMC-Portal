@@ -6,20 +6,24 @@ get_header();
 $groups = dr_sidra_course_groups();
 $courses = dr_sidra_courses();
 ?>
-<section class="page-hero">
+<section class="page-band">
   <div class="wrap">
-    <p class="eyebrow" style="color:var(--teal)">Catalog</p>
+    <p class="eyebrow">Catalog</p>
     <h1>All courses</h1>
     <p class="lede">Choose the full AMC MCQ course, one subject, or the exam-week batch. Opening a course takes you to the learning portal.</p>
   </div>
 </section>
-<section class="section" style="padding-top:1rem">
+<section class="section catalog">
   <div class="wrap">
     <?php foreach ($groups as $key => $label) : ?>
+      <?php
+      $in_group = array_values(array_filter($courses, function ($course) use ($key) {
+          return $course['group'] === $key;
+      }));
+      ?>
       <h2 class="group"><?php echo esc_html($label); ?></h2>
-      <div class="cards">
-        <?php foreach ($courses as $course) : ?>
-          <?php if ($course['group'] !== $key) { continue; } ?>
+      <div class="cards<?php echo count($in_group) === 1 ? ' cards-single' : ''; ?>">
+        <?php foreach ($in_group as $course) : ?>
           <article class="card">
             <div class="kicker"><?php echo esc_html($course['group_label']); ?></div>
             <h3><?php echo esc_html($course['title']); ?></h3>

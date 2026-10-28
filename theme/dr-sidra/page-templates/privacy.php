@@ -4,7 +4,7 @@
  */
 get_header();
 ?>
-<section class="page-hero">
+<section class="page-band">
   <div class="wrap prose">
     <h1>Privacy policy</h1>
     <p>This policy describes the public website for Dr. Sidra’s AMC preparation academy. The learning portal, where you create a student account, has its own account data and is a separate site.</p>

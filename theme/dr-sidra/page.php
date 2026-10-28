@@ -4,7 +4,7 @@
  */
 get_header();
 ?>
-<section class="page-hero">
+<section class="page-band">
   <div class="wrap prose">
     <?php while (have_posts()) : the_post(); ?>
       <h1><?php the_title(); ?></h1>

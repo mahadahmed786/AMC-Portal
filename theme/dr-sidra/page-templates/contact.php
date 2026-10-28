@@ -5,7 +5,7 @@
 get_header();
 $contact = dr_sidra_contact();
 ?>
-<section class="page-hero">
+<section class="page-band">
   <div class="wrap">
     <h1>Contact</h1>
     <p class="lede">Questions about a module, a batch, or access after you join. The learning portal is where you sign in.</p>

@@ -4,7 +4,7 @@
  */
 get_header();
 ?>
-<section class="page-hero">
+<section class="page-band">
   <div class="wrap prose">
     <h1>Terms and conditions</h1>
     <p>These terms cover the public website for Dr. Sidra’s AMC MCQ preparation academy. Using the site means you accept them. If you do not, please leave the site.</p>
