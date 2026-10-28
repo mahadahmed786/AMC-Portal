@@ -1,0 +1,7 @@
+.env
+*.log
+sidra-lms-passwords.txt
+.DS_Store
+Thumbs.db
+local-preview/
+*.zip

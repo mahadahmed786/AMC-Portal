@@ -1,0 +1,52 @@
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: wordpress-root
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-pwordpress-root"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  wordpress:
+    image: wordpress:6.7-php8.2-apache
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8088:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - wp_html:/var/www/html
+      - ./theme/dr-sidra:/var/www/html/wp-content/themes/dr-sidra
+
+  wpcli:
+    image: wordpress:cli-php8.2
+    depends_on:
+      wordpress:
+        condition: service_started
+    user: "33:33"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - wp_html:/var/www/html
+      - ./theme/dr-sidra:/var/www/html/wp-content/themes/dr-sidra
+    entrypoint: ["wp"]
+    command: ["--info"]
+
+volumes:
+  db_data:
+  wp_html:
