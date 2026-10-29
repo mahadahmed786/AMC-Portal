@@ -25,7 +25,7 @@ function dr_sidra_assets() {
         array(),
         null
     );
-    wp_enqueue_style('dr-sidra', get_stylesheet_uri(), array('dr-sidra-fonts'), '1.5.0');
+    wp_enqueue_style('dr-sidra', get_stylesheet_uri(), array('dr-sidra-fonts'), '1.6.0');
     wp_enqueue_script('dr-sidra', get_template_directory_uri() . '/assets/theme.js', array(), '1.3.0', true);
 }
 add_action('wp_enqueue_scripts', 'dr_sidra_assets');

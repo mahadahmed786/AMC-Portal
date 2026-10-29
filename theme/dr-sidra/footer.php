@@ -39,7 +39,7 @@ $contact = dr_sidra_contact();
     </div>
   </div>
   <div class="wrap">
-    <p class="fine">© <?php echo esc_html(gmdate('Y')); ?> Dr. Sidra. All rights reserved. Photograph by Markus Frieauff on Unsplash.</p>
+    <p class="fine">© <?php echo esc_html(gmdate('Y')); ?> Dr. Sidra. All rights reserved. Photographs by Markus Frieauff and Daniel Sone for the National Cancer Institute, on Unsplash.</p>
   </div>
 </footer>
 <?php wp_footer(); ?>

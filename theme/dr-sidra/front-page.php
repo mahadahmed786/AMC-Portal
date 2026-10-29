@@ -18,7 +18,7 @@ $featured = array_values(array_filter(dr_sidra_courses(), function ($course) {
       <a class="btn btn-teal" href="<?php echo esc_url(home_url('/courses/')); ?>">Explore Courses</a>
       <a class="btn btn-line" href="<?php echo esc_url(dr_sidra_signup_url()); ?>">Become a Member</a>
     </div>
-    <p class="quiet">Take the full course, one subject, or the exam-week batch. Lessons open in the learning portal.</p>
+    <p class="quiet">The AMC MCQ Part 1 course opens in the learning portal.</p>
   </div>
 </section>
 
@@ -61,17 +61,22 @@ $featured = array_values(array_filter(dr_sidra_courses(), function ($course) {
     <div class="section-head">
       <div>
         <h2>Explore our courses</h2>
-        <p class="lede">Subject modules, a full preparatory course, and an exam-week batch. Study happens in the learning portal after you become a member.</p>
+        <p class="lede">AMC MCQ Part 1, with the overview, notes, practice questions, and written case. Study happens in the learning portal after you become a member.</p>
       </div>
       <a class="btn btn-teal" href="<?php echo esc_url(home_url('/courses/')); ?>">View all courses</a>
     </div>
     <div class="cards">
       <?php foreach ($featured as $course) : ?>
         <article class="card">
+          <?php if (!empty($course['image'])) : ?>
+            <img class="card-photo" src="<?php echo esc_url(get_template_directory_uri() . '/assets/' . $course['image']); ?>" alt="<?php echo esc_attr($course['image_alt']); ?>">
+          <?php endif; ?>
+          <div class="card-body">
           <div class="kicker"><?php echo esc_html($course['group_label']); ?></div>
           <h3><?php echo esc_html($course['title']); ?></h3>
           <p><?php echo esc_html($course['blurb']); ?></p>
           <a class="more" href="<?php echo esc_url(dr_sidra_course_url($course['lms_path'])); ?>">View in the portal</a>
+          </div>
         </article>
       <?php endforeach; ?>
     </div>

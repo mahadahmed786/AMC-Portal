@@ -47,9 +47,7 @@ function dr_sidra_contact() {
 
 function dr_sidra_stats() {
     return array(
-        array('value' => '9', 'label' => 'Courses prepared'),
-        array('value' => '7', 'label' => 'Subject modules'),
-        array('value' => '1', 'label' => 'Exam-week batch'),
+        array('value' => '1', 'label' => 'Course prepared'),
         array('value' => 'AUD', 'label' => 'Prices in Australian dollars'),
     );
 }
@@ -77,94 +75,22 @@ function dr_sidra_quotes() {
 function dr_sidra_courses() {
     return array(
         array(
-            'slug' => 'amc-mcq-all-in-one',
-            'title' => 'AMC MCQ All-in-One Preparatory Course',
-            'group' => 'all-in-one',
-            'group_label' => 'All-in-one',
-            'blurb' => 'A full path through the AMC MCQ Part 1 syllabus, taught as connected clinical ideas rather than isolated facts.',
+            'slug' => 'amc-mcq-part-1',
+            'title' => 'AMC MCQ Part 1',
+            'group' => 'part-1',
+            'group_label' => 'Part 1 course',
+            'blurb' => 'A guided first pass through the AMC MCQ Part 1: how the paper is built, how to read a stem, 12 original practice questions, and a written case.',
             'featured' => true,
-            'lms_path' => '/lms/courses/amc-mcq-all-in-one-preparatory-course',
-        ),
-        array(
-            'slug' => 'adult-health-medicine',
-            'title' => 'Adult Health Medicine',
-            'group' => 'subject',
-            'group_label' => 'Subject module',
-            'blurb' => 'Cardiology, respiratory, endocrine, renal, and the other adult medicine topics the MCQ expects you to reason through.',
-            'featured' => true,
-            'lms_path' => '/lms/courses/adult-health-medicine',
-        ),
-        array(
-            'slug' => 'surgery',
-            'title' => 'Surgery',
-            'group' => 'subject',
-            'group_label' => 'Subject module',
-            'blurb' => 'General surgery, acute abdomen, trauma, and the next safe step in surgical scenarios.',
-            'featured' => true,
-            'lms_path' => '/lms/courses/surgery',
-        ),
-        array(
-            'slug' => 'womens-health',
-            'title' => "Women's Health",
-            'group' => 'subject',
-            'group_label' => 'Subject module',
-            'blurb' => 'Obstetrics and gynaecology framed around Australian guidelines and exam-style decisions.',
-            'featured' => false,
-            'lms_path' => '/lms/courses/women-s-health',
-        ),
-        array(
-            'slug' => 'mental-health',
-            'title' => 'Mental Health',
-            'group' => 'subject',
-            'group_label' => 'Subject module',
-            'blurb' => 'Psychiatry for the AMC MCQ: diagnosis, risk, and management that matches Australian practice.',
-            'featured' => false,
-            'lms_path' => '/lms/courses/mental-health',
-        ),
-        array(
-            'slug' => 'population-health',
-            'title' => 'Population Health, Biostatistics and Ethics',
-            'group' => 'subject',
-            'group_label' => 'Subject module',
-            'blurb' => 'Screening, study design, ethics, and the public-health questions that sit beside the clinical stems.',
-            'featured' => false,
-            'lms_path' => '/lms/courses/population-health-biostatistics-and-ethics',
-        ),
-        array(
-            'slug' => 'emergency-medicine',
-            'title' => 'Emergency Medicine',
-            'group' => 'subject',
-            'group_label' => 'Subject module',
-            'blurb' => 'Resuscitation, acute presentations, and how to choose the safest immediate action.',
-            'featured' => true,
-            'lms_path' => '/lms/courses/emergency-medicine',
-        ),
-        array(
-            'slug' => 'pediatrics',
-            'title' => 'Pediatrics',
-            'group' => 'subject',
-            'group_label' => 'Subject module',
-            'blurb' => 'Common childhood illness, development, and the decisions the AMC tests in paediatric stems.',
-            'featured' => false,
-            'lms_path' => '/lms/courses/pediatrics',
-        ),
-        array(
-            'slug' => 'exam-week',
-            'title' => 'Exam-week high-yield sessions',
-            'group' => 'exam-week',
-            'group_label' => 'Exam week',
-            'blurb' => 'A short batch of live revision before an exam sitting. Recordings and notes follow the session.',
-            'featured' => true,
-            'lms_path' => '/lms/batches/exam-week-high-yield-sessions',
+            'image' => 'course-amc.jpg',
+            'image_alt' => 'A stethoscope beside an open laptop',
+            'lms_path' => '/lms/courses/amc-mcq-part-1',
         ),
     );
 }
 
 function dr_sidra_course_groups() {
     return array(
-        'all-in-one' => 'All-in-one course',
-        'subject' => 'Subject modules',
-        'exam-week' => 'Exam week',
+        'part-1' => 'AMC MCQ Part 1',
     );
 }
 
@@ -172,7 +98,7 @@ function dr_sidra_faqs() {
     return array(
         array(
             'q' => 'What does Dr. Sidra teach?',
-            'a' => 'Preparation for the AMC MCQ Part 1. You can take the all-in-one course, a single subject module, or the exam-week batch.',
+            'a' => 'Preparation for the AMC MCQ Part 1. The course includes an overview, study notes, practice questions, and a written case.',
         ),
         array(
             'q' => 'How do I enrol?',
@@ -184,11 +110,11 @@ function dr_sidra_faqs() {
         ),
         array(
             'q' => 'How do I pay?',
-            'a' => 'These starter courses are open for self-enrolment while prices are being set. When a fee applies, you pay inside the learning portal in Australian dollars. This website does not take card payments.',
+            'a' => 'This course is open for self-enrolment while the price is being set. When a fee applies, you pay inside the learning portal in Australian dollars. This website does not take card payments.',
         ),
         array(
             'q' => 'Can I study from outside Australia?',
-            'a' => 'Yes. Lessons are online. Live exam-week sessions are scheduled in the batch, with recordings afterwards.',
+            'a' => 'Yes. Lessons are online, so you can study from outside Australia.',
         ),
     );
 }

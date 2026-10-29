@@ -10,7 +10,7 @@ $courses = dr_sidra_courses();
   <div class="wrap">
     <p class="eyebrow">Catalog</p>
     <h1>All courses</h1>
-    <p class="lede">Choose the full AMC MCQ course, one subject, or the exam-week batch. Opening a course takes you to the learning portal.</p>
+    <p class="lede">AMC MCQ Part 1. Opening the course takes you to the learning portal.</p>
   </div>
 </section>
 <section class="section catalog">
@@ -25,10 +25,15 @@ $courses = dr_sidra_courses();
       <div class="cards<?php echo count($in_group) === 1 ? ' cards-single' : ''; ?>">
         <?php foreach ($in_group as $course) : ?>
           <article class="card">
+            <?php if (!empty($course['image'])) : ?>
+              <img class="card-photo" src="<?php echo esc_url(get_template_directory_uri() . '/assets/' . $course['image']); ?>" alt="<?php echo esc_attr($course['image_alt']); ?>">
+            <?php endif; ?>
+            <div class="card-body">
             <div class="kicker"><?php echo esc_html($course['group_label']); ?></div>
             <h3><?php echo esc_html($course['title']); ?></h3>
             <p><?php echo esc_html($course['blurb']); ?></p>
             <a class="more" href="<?php echo esc_url(dr_sidra_course_url($course['lms_path'])); ?>">View in the portal</a>
+            </div>
           </article>
         <?php endforeach; ?>
       </div>
